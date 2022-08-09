@@ -1,0 +1,10 @@
+FROM node:14
+# node js 버전의 이미지를 설치한다
+WORKDIR /bezkoder-app
+# 워킹 디렉토리의 경로
+COPY package.json .
+# package.json file을 컨테이너로 복사한다.
+RUN npm install
+COPY . .
+CMD npm start
+# 스크립트를 런하고 npm start를 이미지가 만들어진 이후에 한다.
